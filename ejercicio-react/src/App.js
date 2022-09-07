@@ -1,5 +1,5 @@
 import './App.css';
-import Contactos from './components/contactos';
+import Contactos from './components/Ejercicio 1-3/contactos';
 
 function App() {
   const contactoPrueba = {
