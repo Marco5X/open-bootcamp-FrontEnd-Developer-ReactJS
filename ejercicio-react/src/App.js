@@ -1,6 +1,7 @@
 import './App.css';
 import Contactos from './components/Ejercicio 1-3/contactos';
 import Clockf from './components/Ejercicio 4-6/cicloDeVida';
+import { Contacts } from './components/Ejercicio 7-9/Contactos';
 
 function App() {
   const contactoPrueba = {
@@ -13,7 +14,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/*<Contactos contacto ={contactoPrueba} />*/}
-        <Clockf />
+        {/* <Clockf /> */}
+        <Contacts />
       </header>
     </div>
   );
