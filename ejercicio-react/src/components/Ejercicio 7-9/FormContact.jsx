@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 
 
-export const FormContact = (onAddContact) => {
+export const FormContact = ({onAddContact}) => {
     const name = useRef("");
     const email = useRef("");
     
@@ -9,7 +9,7 @@ export const FormContact = (onAddContact) => {
         e.preventDefault();
     
         const newContact = { nombre: name.current.value, email: email.current.value, conectado: true };
-    
+            
         onAddContact(newContact);
         name.current.value = "";
         email.current.value = "";
@@ -17,7 +17,7 @@ export const FormContact = (onAddContact) => {
 
     return (
         <div>
-            <form action="" onSubmit={addContact}>
+            <form onSubmit={addContact}>
                 <h3>ADD CONTACT</h3>
                 <input name="name" type="text" placeholder="Name" ref={name}/>
                 <input name="email" type="email" placeholder="Email" ref={email}/>

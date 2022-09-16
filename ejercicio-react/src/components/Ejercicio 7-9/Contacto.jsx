@@ -2,7 +2,6 @@ import React from "react";
 
 
 export const Contact = ({contacto, conexionContact, deleteContact}) => {
-
     return (
         <div>
             <h2>{contacto.nombre}</h2>

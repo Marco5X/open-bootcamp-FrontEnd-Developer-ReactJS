@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Contact } from "./Contacto";
-import {FormContact} from "./FormContact";
+import { FormContact } from "./FormContact";
 
 
 export const Contacts = () => {
@@ -14,9 +14,9 @@ export const Contacts = () => {
     function conexionContact(contacto) {
         const index = contact.indexOf(contacto)
         const tempContact = [...contact]
-        tempContact[index].estado = !tempContact[index].estado;
+        tempContact[index].conectado = !tempContact[index].conectado;
         setContact(tempContact);
-     }
+    }
 
     function deleteContact(contacto) {
         const index = contact.indexOf(contacto);
@@ -34,16 +34,16 @@ export const Contacts = () => {
     return (
         <div>
             <h2>List Contacts</h2>
-            {contact.map((contacto, index) => {  
+            {contact.map((contacto, index) => {
                 return (
                     <Contact
-                        key={index} 
-                        contacto={contacto} 
-                        conexionContact={conexionContact} 
+                        key={index}
+                        contacto={contacto}
+                        conexionContact={conexionContact}
                         deleteContact={deleteContact} />
                 )
             }
-            )} 
+            )}
             <FormContact onAddContact={addContact} />
         </div>
     )
