@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import LEVELS from "../../models/levels.enum";
 import useTasks from "./useList"
 
-export const Formulario = () => {
+const Formulario = () => {
     let schema = yup.object().shape({
         name: yup.string().min(2, "To short").max(36, "To long").required("Required"),
         description: yup.string().min(3, "to short").max(150, "To long").required("Description required"),
@@ -66,3 +66,5 @@ export const Formulario = () => {
         </div>
     )
 }
+
+export default Formulario
