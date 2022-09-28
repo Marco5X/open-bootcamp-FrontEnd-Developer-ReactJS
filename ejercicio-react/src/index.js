@@ -8,8 +8,8 @@ import { Ruteo } from './components/Ejercicio 16-18/Ruteo';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Ruteo />
+    <App />
+    {/* <Ruteo /> */}
   </React.StrictMode>
 );
 
