@@ -1,43 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { ADD_TODO, TOGGLE_TODO } from '../actions/actions';
 
-const initialState = [
-  {
-    id: "1",
-    title: "Task 1",
-    completed: false,
-    description: "This is a task",
-  },
-  {
-    id: "2",
-    title: "Task 2",
-    completed: false,
-    description: "This is a task",
-  },
-];
+let initialState = [
+    {   id:1,
+        text:"hola",
+        completed:false
+    }];
 
-const userSlice = createSlice({
-  name: "tasks",
-  initialState,
-  reducers: {
-    addTask: (state, action) => {
-      state.push(action.payload);
-    },
-    editTask: (state, action) => {
-      const { id, title, description } = action.payload;
-      const foundTask = state.find((task) => task.id === id);
-      if (foundTask) {
-        foundTask.title = title;
-        foundTask.description = description;
-      }
-    },
-    deleteTask: (state, action) => {
-      const foundTask = state.find((task) => task.id === action.payload);
-      if (foundTask) {
-        state.splice(state.indexOf(foundTask), 1);
-      }
-    },
-  },
-});
-
-export const { addTask, editTask, deleteTask } = userSlice.actions;
-export default userSlice.reducer;
+export const todoReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_TODO:
+            return [
+                ...state,
+                {
+                    id: action.payload.id,
+                    text: action.payload.text,
+                    completed: false
+                }
+            ]
+        case TOGGLE_TODO:
+            return state.map((todo) =>
+                (todo.id === action.payload.id)
+                    ?
+                    {
+                        ...todo,
+                        completed: !todo.completed
+                    }
+                    :
+                    todo
+            )
+        default:
+            return state;
+    }
+}

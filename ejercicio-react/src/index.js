@@ -7,10 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import { Ruteo } from './components/Ejercicio 16-18/Ruteo';
 import AppRedux from "./components/Ejercicio 22-24/AppRedux"
 import { store } from "./components/Ejercicio 22-24/redux/config/storeConfig"
+import { createAppStore } from "./components/Ejercicio 22-24/redux/config/store.js"
 
+let appStore = createAppStore()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
+  <Provider store={appStore}>
     <React.StrictMode>
       {/* <App /> */}
       {/* <Ruteo /> */}
@@ -19,7 +21,4 @@ root.render(
   </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
