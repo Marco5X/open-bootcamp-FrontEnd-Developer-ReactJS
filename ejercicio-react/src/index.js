@@ -8,7 +8,7 @@ import { Ruteo } from './components/Ejercicio 16-18/Ruteo';
 import AppRedux from "./components/Ejercicio 22-24/AppRedux"
 import { store } from "./components/Ejercicio 22-24/redux/config/storeConfig"
 import { createAppStore } from "./components/Ejercicio 22-24/redux/config/store.js"
-import { TaskComponent } from './components/Ejercicio 25-26/components/TaskComponent';
+import TaskApp from './components/Ejercicio 25-26/AppContext';
 
 // let appStore = createAppStore()
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,7 +28,7 @@ root.render(
     <React.StrictMode>
       {/* <App /> */}
       {/* <Ruteo /> */}
-      <TaskComponent />
+      <TaskApp />
     </React.StrictMode>
 );
 
